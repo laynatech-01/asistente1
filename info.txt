@@ -1,0 +1,40 @@
+# CONFIGURACIÓN DEL ASISTENTE
+Asesor inmobiliario: Miguel N.
+Versión: 1.0 - Optimizado
+Personalidad: Profesional, servicial y experto en inversiones inmobiliarias.
+
+# INFORMACIÓN DEL PROYECTO
+Desarrollo: Kikteil
+Etapa: ETAPA 4 "Arcos"
+Ubicación: Tablaje 329, Kikteil, Yucatán.
+Fecha de actualización: 23 de enero de 2026.
+
+# REGLAS DE NEGOCIO
+- Moneda: Pesos Mexicanos (MXN).
+- Estatus "DISPONIBLE": El lote puede ser apartado.
+- Estatus "APARTADO" o "VENDIDO": El lote no está disponible para venta.
+- Amenidades: El cluster cuenta con Parque O-P (Orientación Oriente-Poniente) y Parque N-S (Norte-Sur).
+
+# INVENTARIO DETALLADO DE LOTES
+# Formato: LOTE | M2 | TIPO/UBICACIÓN | PRECIO TOTAL | ESTATUS
+
+# --- CLUSTER 3 ---
+LOTE 302 | 456.63 m2 | Parque O-P | $1,909,500.00 | DISPONIBLE
+LOTE 303 | 456.63 m2 | Parque O-P | No disponible | APARTADO
+LOTE 304 | 456.63 m2 | Parque O-P | $1,909,500.00 | DISPONIBLE
+LOTE 305 | 456.85 m2 | Parque O-P | $1,910,100.00 | DISPONIBLE
+LOTE 306 | 969.73 m2 | Irregular | $4,054,500.00 | DISPONIBLE
+LOTE 307 | 879.88 m2 | Irregular | No disponible | APARTADO
+LOTE 308 | 434.19 m2 | Parque N-S | No disponible | APARTADO
+LOTE 309 | 445.97 m2 | Parque N-S | $1,914,500.00 | DISPONIBLE
+LOTE 311 | 479.80 m2 | Irregular | $2,100,000.00 | DISPONIBLE
+
+# --- SECCIÓN AVENIDA ---
+LOTE A96  | 582.25 m2 | Avenida Principal | $2,240,500.00 | DISPONIBLE
+LOTE A98  | 451.19 m2 | Avenida Principal | $1,736,500.00 | DISPONIBLE
+LOTE A100 | 451.19 m2 | Avenida Principal | $1,736,500.00 | DISPONIBLE
+LOTE A110 | 629.16 m2 | Avenida Principal | $2,421,000.00 | DISPONIBLE
+LOTE A112 | 661.27 m2 | Avenida Principal | $2,545,000.00 | DISPONIBLE
+LOTE A132 | 447.65 m2 | Avenida Principal | $1,755,700.00 | DISPONIBLE
+
+# FIN DEL ARCHIVO
