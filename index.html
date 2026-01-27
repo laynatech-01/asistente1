@@ -2,33 +2,29 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <title>Chat IA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asistente versión-01</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        #status-monitor { font-size: 10px; color: #666; padding: 5px 15px; background: #111; text-align: right; }
-    </style>
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <div class="online-indicator"></div>
-            <strong id="bot-name-display">Asistente versión-01: Cargando...</strong>
-        </div>
-        
-        <div id="chat-box" class="chat-messages">
-            <div class="msg bot-msg">
-                Hola, soy tu Asistente versión 01. Estoy sincronizando la disponibilidad de lotes, un momento...
-            </div>
-        </div>
 
-        <div id="status-monitor">Estado: Iniciando...</div>
+<div class="chat-container">
+    <div id="status-monitor">Estado: Iniciando...</div>
 
-        <div class="chat-input-area">
-            <input type="text" id="user-input" placeholder="Pregunta por un lote..." onkeypress="handleKeyPress(event)">
-            <button id="send-btn" onclick="enviarMensaje()">➤</button>
-        </div>
+    <div id="chat-box" class="chat-messages">
+        <div class="msg bot-msg">Hola 👋 IA lista.</div>
     </div>
-    <script src="chat.js"></script>
+
+    <div class="chat-input-area">
+        <input
+            type="text"
+            id="user-input"
+            placeholder="Escribe tu mensaje..."
+        >
+        <button id="send-btn">➤</button>
+    </div>
+</div>
+
+<script src="chat.js"></script>
 </body>
 </html>
