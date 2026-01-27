@@ -1,4 +1,25 @@
-const API_URL = "https://hf-api.eligiolayna01.workers.dev/";
+console.log("chat.js cargado");
+
+const API_URL = "https://hf-api.eligiolayna01.workers.dev";
+
+document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("user-input");
+    const button = document.getElementById("send-btn");
+
+    button.addEventListener("click", enviarMensaje);
+
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") enviarMensaje();
+    });
+
+    setEstado("Sistema listo");
+});
+
+function setEstado(texto, error = false) {
+    const e = document.getElementById("status-monitor");
+    e.innerText = "Estado: " + texto;
+    e.style.color = error ? "red" : "lime";
+}
 
 async function enviarMensaje() {
     const input = document.getElementById("user-input");
@@ -17,21 +38,28 @@ async function enviarMensaje() {
         const r = await fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ pregunta: texto }) // Enviamos "pregunta"
+            body: JSON.stringify({ pregunta: texto })
         });
 
         const data = await r.json();
 
-        // data.answer es lo que el Worker devuelve arriba
-        document.getElementById(id).innerText = data.answer || "Sin respuesta";
+        document.getElementById(id).innerText =
+            data.answer || "Sin respuesta";
 
         setEstado("Listo");
 
     } catch (e) {
-        console.error(e);
         document.getElementById(id).innerText = "Error de conexión";
         setEstado("Error", true);
     }
 }
 
-// Nota: Mantén tus funciones agregarMensaje y setEstado tal como las tenías.
+function agregarMensaje(texto, clase, id = null) {
+    const box = document.getElementById("chat-box");
+    const div = document.createElement("div");
+    div.className = "msg " + clase;
+    div.innerText = texto;
+    if (id) div.id = id;
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+}
