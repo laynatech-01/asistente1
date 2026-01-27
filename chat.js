@@ -1,6 +1,6 @@
 console.log("chat.js cargado");
 
-const API_URL = "https://hf-api.eligiolayna01.workers.dev/";
+const API_URL = "https://hf-api.eligiolayna01.workers.dev";
 
 document.addEventListener("DOMContentLoaded", () => {
     const input = document.getElementById("user-input");
