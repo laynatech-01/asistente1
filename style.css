@@ -1,4 +1,4 @@
-/* RESET BÁSICO */
+/* RESET */
 html, body {
     height: 100%;
     margin: 0;
@@ -9,18 +9,17 @@ body {
     background: #0f0f0f;
     font-family: Arial, sans-serif;
     color: #eee;
-    overflow: hidden; /* evita scroll raro en móvil */
+    overflow: hidden;
 }
 
 /* CONTENEDOR PRINCIPAL */
 .chat-container {
     max-width: 600px;
     margin: auto;
-    height: 100dvh;              /* 👈 CLAVE para móviles */
-    min-height: 100dvh;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    background: #0f0f0f;
+    position: relative;
 }
 
 /* ESTADO */
@@ -35,14 +34,15 @@ body {
 
 /* MENSAJES */
 .chat-messages {
-    flex: 1;                     /* ocupa espacio dinámico */
+    flex: 1;
     overflow-y: auto;
     padding: 10px;
+    padding-bottom: 80px; /* 👈 espacio para el input fijo */
     display: flex;
     flex-direction: column;
 }
 
-/* MENSAJES INDIVIDUALES */
+/* MENSAJES */
 .msg {
     padding: 10px 14px;
     margin-bottom: 8px;
@@ -63,20 +63,26 @@ body {
     align-self: flex-start;
 }
 
-/* ÁREA DE INPUT */
+/* INPUT FIJO ABAJO */
 .chat-input-area {
+    position: fixed;        /* 👈 CLAVE */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 600px;
+    margin: auto;
     display: flex;
     padding: 10px;
     background: #000;
     border-top: 1px solid #333;
-    flex-shrink: 0;              /* 👈 nunca se encoge */
+    z-index: 1000;
 }
 
 /* INPUT */
 #user-input {
     flex: 1;
     padding: 10px;
-    font-size: 16px;             /* 👈 evita zoom en iOS */
+    font-size: 16px;        /* 👈 evita zoom en iOS */
     border-radius: 6px;
     border: none;
     outline: none;
