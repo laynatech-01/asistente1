@@ -1,8 +1,9 @@
 console.log("chat.js cargado");
 
 const API_URL = "https://hf-api.eligiolayna01.workers.dev";
+let PROMPT_BASE = "";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const input = document.getElementById("user-input");
     const button = document.getElementById("send-btn");
 
@@ -12,8 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === "Enter") enviarMensaje();
     });
 
+    await cargarPrompt();
     setEstado("Sistema listo");
 });
+
+async function cargarPrompt() {
+    try {
+        const r = await fetch("info.txt");
+        PROMPT_BASE = await r.text();
+        console.log("Prompt cargado");
+    } catch {
+        PROMPT_BASE = "";
+        console.warn("No se pudo cargar info.txt");
+    }
+}
 
 function setEstado(texto, error = false) {
     const e = document.getElementById("status-monitor");
@@ -38,7 +51,10 @@ async function enviarMensaje() {
         const r = await fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ pregunta: texto })
+            body: JSON.stringify({
+                pregunta: texto,
+                prompt: PROMPT_BASE
+            })
         });
 
         const data = await r.json();
